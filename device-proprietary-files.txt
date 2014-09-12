@@ -483,7 +483,6 @@ vendor/lib/libOmxMux.so
 lib/libmm-qcamera.so
 lib/libqminvapi.so
 
-vendor/lib/libdsucsd.so
 vendor/lib/libjpegdhw.so
 vendor/lib/liboptizoom.so
 
@@ -494,9 +493,6 @@ vendor/lib/liblistenjni.so
 vendor/lib/liblisten.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/liblistensoundmodel.so
-
-bin/wcnss_filter
-bin/wcnss_service
 
 #fm
 bin/fmconfig

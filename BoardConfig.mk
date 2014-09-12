@@ -28,6 +28,9 @@ TARGET_CPU_VARIANT := krait
 BOARD_KERNEL_SEPARATED_DT :=  true
 BOARD_CUSTOM_BOOTIMG_MK   := $(COMMON_PATH)/mkbootimg.mk
 
+ADD_RADIO_FILES ?= true
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
+
 BOARD_KERNEL_CMDLINE := ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -70,6 +73,12 @@ CM_POWERHAL_EXTENSION := qcom
 
 # Consumer IR
 TARGET_PROVIDES_CONSUMERIR_HAL := true
+
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+
+# Simple time service client
+BOARD_USES_QC_TIME_SERVICES := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
@@ -128,6 +137,7 @@ WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME          := "wlan"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WIFI_DRIVER_FW_PATH_AP           := "ap"
+TARGET_USES_WCNSS_CTRL           := true
 
 # No old RPC for prop
 TARGET_NO_RPC := true
@@ -144,9 +154,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
-
-# Enable CPU boosting events in the power HAL
-TARGET_USES_CPU_BOOST_HINT := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
